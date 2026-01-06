@@ -189,10 +189,58 @@
 
 <section>
   <h2>Contact Us</h2>
-  <p style="text-align:center">
-    📞 +91 97415 62979 <br>
-    📧 info@macrotravels.co.in <br>
-    📍 Bengaluru
+  <section id="contact" style="padding:60px 20px; background:#f7f7f7;">
+  <h2 style="text-align:center; color:#0a1f44;">Book Your Cab</h2>
+
+  <form onsubmit="sendBooking(event)" style="max-width:600px; margin:30px auto; background:#fff; padding:25px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1);">
+
+    <input type="text" id="name" placeholder="Your Name" required style="width:100%; padding:12px; margin-bottom:12px;">
+    <input type="tel" id="phone" placeholder="Phone Number" required style="width:100%; padding:12px; margin-bottom:12px;">
+    <input type="text" id="pickup" placeholder="Pickup Location" required style="width:100%; padding:12px; margin-bottom:12px;">
+    <input type="text" id="drop" placeholder="Drop Location" required style="width:100%; padding:12px; margin-bottom:12px;">
+    <input type="date" id="date" required style="width:100%; padding:12px; margin-bottom:12px;">
+
+    <select id="vehicle" required style="width:100%; padding:12px; margin-bottom:12px;">
+      <option value="">Select Vehicle Type</option>
+      <option>Sedan</option>
+      <option>SUV</option>
+      <option>Luxury</option>
+    </select>
+
+    <textarea id="message" placeholder="Message (optional)" style="width:100%; padding:12px; margin-bottom:15px;"></textarea>
+
+    <button type="submit" style="width:100%; padding:14px; background:#25D366; color:#fff; border:none; font-size:16px; border-radius:6px;">
+      📲 Book on WhatsApp
+    </button>
+  </form>
+</section>
+
+<script>
+function sendBooking(e){
+  e.preventDefault();
+
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var pickup = document.getElementById("pickup").value;
+  var drop = document.getElementById("drop").value;
+  var date = document.getElementById("date").value;
+  var vehicle = document.getElementById("vehicle").value;
+  var message = document.getElementById("message").value;
+
+  var text =
+    "New Booking Enquiry%0A%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Pickup: " + pickup + "%0A" +
+    "Drop: " + drop + "%0A" +
+    "Date: " + date + "%0A" +
+    "Vehicle: " + vehicle + "%0A" +
+    "Message: " + message;
+
+  window.open("https://wa.me/919741562979?text=" + text, "_blank");
+}
+</script>
+
   </p>
 </section>
 
